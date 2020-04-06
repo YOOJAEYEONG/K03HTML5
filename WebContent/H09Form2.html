@@ -166,8 +166,8 @@
 	
 	<fieldset>
 		<legend>당신이 좋아하는 걸그룹은?(다중선택가능)</legend>
-		<form action="">
-			<select name="girl_group" multiple size="7">
+		<form action=""><!--보통 전송될 URL이 들어가지만 action=""은 현재페이지로 전송됨  -->
+			<select name="girl_group" multiple size="3">
 				<option value="T">트와이스</option>
 				<option value="M">모모랜드</option>
 				<option value="R">레드밸벳</option>
@@ -183,42 +183,65 @@
 
 
 	<p>7777777777777777777777777777777777</p>
+	
+	<!--
+	-서버로 전송할 파일선택창을 띄워준다.
+	-전송할 파일의 포맷을 제한하고 싶을때는 accept속성을 이용한다.
+	-file속성값이 있을때는 value속성은 아무런 의미가없다.
+	-->
 	<h3>type="file</h3>	
 	기본 : <input type="file" name="userfile1"/>
 	<br />
 	속성추가 : <input type="file" name="userfile2"
-		accept=".jpg .png. gif" value="첨부파일추가"/>
+		accept=".jpg ,  .png , .gif" value="첨부파일추가"/>
 	
 	
 	<p>8888888888888888888888888888888888888</p>
+	
+	<!--
+	-다른 태그와는 다르게 value속성을 가지고 있지 않고, 태그사이에 입력되는 값이 value가 된다.
+	-단, Javascript에서 폼값의 체크를 위해서는 value속성으로 접근한다.
+	-소스의 정렬을 위해 태그 사이에 불필요한 줄바꿈이나 공백을 주면
+		그대로 적용되므로 주의 해야한다.
+	-->	
+	<script>
+	function textArea(){
+		/*
+		textarea태그는 value속성은 없으나 Javascript에 접근할 때는 
+		value속성을 통해 값을 가져오거나 변경할 수 있다.
+		*/
+		
+		//textarea의 값을 설정
+		document.getElementById("intro").value="내용바꿈";
+		//textarea의 값을 읽어와서 변수에 저장함
+		var v = document.getElementById("intro").value;
+		//JS의 기본경고창을 통해 내용출력
+		alert(v);
+	}
+	</script>
+	
+	
+	
+	
 	<h3>textarea태그</h3>
 	
-	<textarea name="intro" cols="70" rows="5">
-	내용은 여기에 입력됩니다.
-	</textarea>
+	<textarea name="intro" id="intro" cols="70" rows="5">내용은 여기에 입력됩니다.</textarea>
+	<input type="button" onclick="textArea();" value="난버튼"/>
+	<!-- onclick은 클릭이벤트를 감지하는 '이벤트핸들러' 혹은 '이벤트리스너'라고 한다-->
 	
 	<p>99999999999999999999999999999999999</p>
 	
+	<!--
+	-화면상에서는 보이지 않으나 서버로 전송은 필요할때 사용한다.
+	-주로 회원정보수정이나 게시글 수정에서 많이 사용된다.
+	-->
 	<h3>type="hidden"</h3>
 	<form action="">
 		<input type="hidden" name="member_id" value="kosmo"/>
 		<input type="submit" value="hidden값 전송하기"/>
+		
 	
 	</form>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </body>
 </html>
 
