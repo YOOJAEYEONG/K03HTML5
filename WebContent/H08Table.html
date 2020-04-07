@@ -5,24 +5,29 @@
 <title>H08Table.html-테이블</title>
 </head>
 <body>
+
 	<h2>table 태그</h2>
 
 	<!--
 	table 태그의 속성
 		cellpadding : 셀과 컨텐츠 사이의 여백을 지정한다.
 		cellspacing : 셀과 셀 사이의 여백을 지정한다.
-	table 태그 : 표형태로 컨텐츠를 표현하기 위한 태그.
+		
+		colspan : 가로로 병합
+		rowspan : 세로로 병합
+
+	table 태그 : 표 형태로 컨텐츠를 표현하기 위한 태그.
 		하위태그로 tr, th, td가 있다.
-		<tr> : 행
-		<td> : 셀
-		<th> : <td>와 동일하지만 텍스트에 bold, center 효과를 자동으로 부여한다.
+		<tr> : 행 (Table Row)
+		<td> : 셀 (Table Data)
+		<th> : <td>와 동일하지만 텍스트에 bold, center 효과를 자동으로 부여한다. (Table Header)
 	-->
 
 	<h3>table 태그의 속성을 이용한 테이블 디자인</h3>
 	
 	<!-- table>tr*2>td*3  -->
 	<table border="5" cellpadding = "5" cellspacing="5"
-		 bgcolor='yellow' width=200>
+		 bgcolor='yellow' width=300>
 		<tr>
 			<td>가</td>
 			<td>나</td>
@@ -31,7 +36,7 @@
 		<tr>
 			<td>라</td>
 			<td>마</td>
-			<td><<img src="./images/apple.png" alt="사과" /></td>
+			<td><img src="./images/apple.png" alt="사과" /></td>
 		</tr>
 	</table>
 	
@@ -141,11 +146,13 @@
 			<td bgcolor="white"> </td>
 			<td bgcolor="white">30,000</td>
 		</tr>
+
 		<tr>
 			<th rowspan="3" bgcolor="pink" border="1"><b>총계</b></th>
 			<td bgcolor="white">수입</td>
 			<td bgcolor="white">지출</td>
 		</tr>
+
 		<tr>
 			
 			<td bgcolor="white">1,000,000</td>
@@ -161,7 +168,7 @@
 	
 	
 	<h2>테이블 연습2 CSS사용 - 오늘의 수입/지출</h2>
-	<table width="500" style="backgound-color:red; border:1px solid red;" >
+	<table width='500' style="backgound-color:red; border:1px solid red; " >
 		<tr>
 			<td colspan=3 bgcolor="yellow"><b>오늘의 수입/지출</b></td>
 			
@@ -319,38 +326,7 @@
 			</tr>
 		</tfoot>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	</table>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 </body>
 </html>
