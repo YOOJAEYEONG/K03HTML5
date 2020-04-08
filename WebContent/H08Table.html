@@ -13,8 +13,8 @@
 		cellpadding : 셀과 컨텐츠 사이의 여백을 지정한다.
 		cellspacing : 셀과 셀 사이의 여백을 지정한다.
 		
-		colspan : 가로로 병합
-		rowspan : 세로로 병합
+		colspan : 가로로 열병합
+		rowspan : 세로로 행병합
 
 	table 태그 : 표 형태로 컨텐츠를 표현하기 위한 태그.
 		하위태그로 tr, th, td가 있다.
@@ -61,19 +61,19 @@
 	
 	<table border=1 width='300'>
 		<tr>
-			<td>1행1열</td>
-			<td>1행2열</td>
-			<td>1행3열</td>
+			<td colspan="2">1행1열</td>
+			<!-- <td>1행2열</td> -->
+			<td rowspan="3">1행3열</td>
 		</tr>
 		<tr>
-			<td>2행1열</td>
+			<td rowspan="2">2행1열</td>
 			<td>2행2열</td>
-			<td>2행3열</td>
+			<!-- <td>2행3열</td> -->
 		</tr>
 		<tr>
-			<td>3행1열</td>
+			<!-- <td>3행1열</td> -->
 			<td>3행2열</td>
-			<td>3행3열</td>
+			<!-- <td>3행3열</td> -->
 		</tr>
 	</table>
 	
@@ -168,33 +168,33 @@
 	
 	
 	<h2>테이블 연습2 CSS사용 - 오늘의 수입/지출</h2>
-	<table width='500' style="backgound-color:red; border:1px solid red; " >
+	<table width='500' cellspacing='1' style="background-color: red; color: royalblue;" >
 		<tr>
 			<td colspan=3 bgcolor= "yellow"><b>오늘의 수입/지출</b></td>
 			
 			
 		</tr>
-		<tr style="backgound-color: solid black;">
+		<tr style="background-color: pink;">
 			<th >내용</th>
 			<th><strong>수입</strong></th>
 			<th><b>지출</b></th>
 		</tr>
-		<tr style="backgound-color: white;">
+		<tr style="background-color: whitesmoke;">
 			<td>월급</td>
 			<td>1,000,000</td>
 			<td> </td>
 		</tr>
-		<tr style="backgound-color: solid black;">
+		<tr style="background-color: whitesmoke;">
 			<td>점심값</td>
 			<td> </td>
 			<td>5,000</td>
 		</tr>
-		<tr style="backgound-color: green;">
-			<td style="backgound-color: green;">부모님선물</td>
-			<td> </td>
-			<td>30,000</td>
+		<tr style="background-color: whitesmoke;">
+			<td >부모님선물</td>
+			<td  > </td>
+			<td  >30,000</td>
 		</tr>
-		<tr>
+		<tr style="background-color: whitesmoke;">
 			<th rowspan="3" style="background-color: pink;" ><b>총계</b></th>
 			<td>수입</td>
 			<td>지출</td>
