@@ -18,9 +18,6 @@
 	
 	request.setCharacterEncoding("UTF-8");
 	
-	
-	
-	
 	/*
 	JSP에서 폼값을 받을때 아래와 같이 request내장객체를 사용한다.
 	단, 서블릭(Servlet)에서는 get 방식과 post 방식에 따라
@@ -35,13 +32,6 @@
 	
 	
 	</ul>
-
-
-
-
-
-
-
 </body>
 </html>
 
