@@ -14,7 +14,7 @@
 	전송된 값의 한글 깨짐 방지를 위하 설정. 영어나 숫자만 있는 경우라면
 	설정하지 않아도 됨.
 	*/
-	
+	 
 	
 	request.setCharacterEncoding("UTF-8");
 	
