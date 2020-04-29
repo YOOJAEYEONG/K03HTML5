@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var span;
+
+        window.onload = function(){
+            span = document.getElementById("result");
+            if(navigator.geolocation){
+                span.innerHTML = "GeoLocation API를 지원합니다.";
+
+                var options = {
+                    enableHighAccurcy:true,
+                    timeout:5000,
+                    maximumAge:3000
+                };
+
+                navigator.geolocation.getCurrentPosition(
+                    showPosition, showError, options);
+                
+            }
+            else {
+                span.innerHTML = "이브라우저는 Geolocation API를 지원하지 않음";
+            }
+        }
+        var showPosition = function(position){
+            //위도를 반환
+            var latitude = position.coords.latitude;
+            //경도를 반환
+            var longitude = position.coords.longitude;
+
+            //위경도를 화면에 출력
+            span.innerHTML = "위도:"+latitude+"경도:"+longitude;
+
+            document.getElementById("lat").value = latitude;
+            document.getElementById("lng").value = longitude;
+        }
+        var showError = function(error){
+            switch(error.code){
+                case error.UNKNOWN_ERROR:
+                    span.innerHTML = "알수없는 에러발생"; break;
+                case error.PERMISSION_DENIED:
+                    span.innerHTML = "권한이 없습ㄴ디ㅏ."; break;
+                case error.POSITION_UNAVAILABLE:
+                    span.innerHTML = "위치확인불가";  break;
+                case error.TIMEOUT:
+                    span.innerHTML = "시간초과 "; break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Geolocatation - current 위도, 경도 알아내기</h2>
+
+    <fieldset>
+        <legend>현재위치 - 위도, 경도
+            <span id="result" style="color: red; font-size: 1.5em;"></span>
+        </legend>
+    </fieldset>
+
+    위도 : <input type="text" id="lat" >
+    경도 : <input type="text" id="lng">
+</body>
+</html>
