@@ -53,7 +53,6 @@
             //select의 text값을 가져와서 재생되는 음원 정보를 보여줌
             divMsg.innerHTML = select.options[idx].text + "을 재생합니다.";
         }
-
     </script>
 </head>
 <body>
@@ -63,9 +62,7 @@
         처음 play버튼을 누르면 리스트에 있는 곡이 연속하여 자동재생 됩니다. 마우스로 다른 곡을 선택하면 곡이 바뀝니다. next버튼을 누르면 다음 곡으로 넘어갑니다.
     </p>
     <hr />
-    <audio id="audio" controls>
-        <p>브라우져가 audio태그를 지원하지 않습니다.</p>
-    </audio>    
+    <audio id="audio" controls>브라우져가 audio태그를 지원하지 않습니다.</audio>    
     <br />
     <select id="select" size="5" onchange="changePlay();" >
         <option value="./media/I_Remember_You.mp3">I Remember You[SkidRow]</option>
